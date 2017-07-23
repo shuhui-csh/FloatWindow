@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FloatWindow</string>
+    <string name="float_window">这是悬浮窗</string>
 </resources>
