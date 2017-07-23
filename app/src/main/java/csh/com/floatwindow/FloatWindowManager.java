@@ -59,9 +59,14 @@ public class FloatWindowManager {
         params.format = PixelFormat.TRANSLUCENT;
         params.gravity = Gravity.CENTER;
 
+        // 运行的系统版本小于4.4（SDK版本为19以下，toast类型无法处理触摸和点击）
+        // 或者大于7.0（SDK版本为24以上，比如7.1.1(25),toast类似会自动消失，无法控制展示时长）
+        // 需要在清单文件里申请权限，创建phone类型的悬浮窗
         if (Build.VERSION.SDK_INT < 19 || Build.VERSION.SDK_INT > 24) {
             params.type = WindowManager.LayoutParams.TYPE_PHONE;
         } else {
+            // toast类型不需要在清单文件里申请权限，但是仅能在（19 <= 系统版本 <= 24）的系统版本上
+            // 满足使用条件（可接收触摸和点击事件，并且可以控制展示时长）
             params.type = WindowManager.LayoutParams.TYPE_TOAST;
         }
 
