@@ -7,7 +7,6 @@ import android.support.v4.view.ViewCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 
 /**
@@ -70,7 +69,7 @@ public class FloatWindowManager {
             params.type = WindowManager.LayoutParams.TYPE_TOAST;
         }
 
-        params.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        params.width = 600;
         params.height = 200;
         params.x = 0;
         params.y = 0;
